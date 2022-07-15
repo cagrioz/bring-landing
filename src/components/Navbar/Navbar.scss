@@ -2,8 +2,13 @@
 @use '../../scss/common' as *;
 
 .header-nav {
+    @include horizontal-list;
+
     ul {
-        @include horizontal-list;
+        @include reset-list;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
 
         li {
             padding: $padding-md $padding-lg;
@@ -45,11 +50,17 @@
                     background-color: $primary-color-hover;
                 }
             }
+        }
+    }
 
-            &.theme-toggle #icon {
-                width: 30px;
-                height: 30px;
-            }
+    .theme-toggle {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        cursor: pointer;
+
+        svg {
+            font-size: $font-xl;
         }
     }
 }

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import 'boxicons';
+import { BiToggleLeft, BiToggleRight } from 'react-icons/bi';
 
 import './Navbar.scss';
 
@@ -12,7 +12,7 @@ function Navbar() {
         theme: [theme, setTheme],
     } = useContext(HeaderContext);
 
-    const toggleTheme = () => {
+    const toggleTheme = (e) => {
         if (theme === 'light') {
             setTheme('dark');
         } else {
@@ -33,8 +33,10 @@ function Navbar() {
                         {el}
                     </li>
                 ))}
-                <box-icon className="theme-toggle" name="toggle-left" onClick={toggleTheme}></box-icon>
             </ul>
+            <div className="theme-toggle" onClick={(e) => toggleTheme(e)}>
+                {theme === 'light' ? <BiToggleLeft /> : <BiToggleRight />}
+            </div>
         </nav>
     );
 }
