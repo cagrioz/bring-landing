@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import 'boxicons';
 
+import './Navbar.scss';
+
+import HeaderContext from '../../context/HeaderContext';
+
 function Navbar() {
-    const [theme, setTheme] = useState('light');
+    const {
+        navList,
+        activeSection: [activeSection, setActiveSection],
+        theme: [theme, setTheme],
+    } = useContext(HeaderContext);
 
     const toggleTheme = () => {
         if (theme === 'light') {
@@ -13,13 +21,19 @@ function Navbar() {
     };
 
     return (
-        <nav>
+        <nav className="header-nav">
             <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Services</li>
-                <li>Contact</li>
-                <box-icon name="toggle-left" onClick={toggleTheme}></box-icon>
+                {navList.map((el) => (
+                    <li
+                        key={el}
+                        onClick={(e) => setActiveSection(el.toLowerCase())}
+                        className={el.toLowerCase() === activeSection ? 'active' : ''}
+                    >
+                        {' '}
+                        {el}
+                    </li>
+                ))}
+                <box-icon className="theme-toggle" name="toggle-left" onClick={toggleTheme}></box-icon>
             </ul>
         </nav>
     );

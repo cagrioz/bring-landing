@@ -1,8 +1,11 @@
 // Variables
-@forward 'variables.scss';
-
-// Base styles
-@forward 'base.scss';
+@forward 'variables';
 
 // Common styles
-@forward 'common.scss';
+@forward 'common';
+
+// Base styles
+@forward 'base';
+
+// Layout styles
+@forward 'layout';

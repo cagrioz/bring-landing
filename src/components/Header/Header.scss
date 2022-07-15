@@ -1,1 +1,6 @@
-@use '../../scss' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/common' as *;
+
+header {
+    padding: $padding-xl;
+}

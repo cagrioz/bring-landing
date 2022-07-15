@@ -1,0 +1,55 @@
+@use '../../scss/variables' as *;
+@use '../../scss/common' as *;
+
+.header-nav {
+    ul {
+        @include horizontal-list;
+
+        li {
+            padding: $padding-md $padding-lg;
+            font-size: $font-sm;
+            font-weight: 600;
+            color: $title-color;
+            cursor: pointer;
+            position: relative;
+
+            @include smooth-animation;
+
+            &:after {
+                content: ' ';
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                -ms-border-radius: 100%;
+                -o-border-radius: 100%;
+                @include absolute-center-x;
+                bottom: 0;
+                visibility: hidden;
+            }
+
+            &.active {
+                color: $primary-color;
+
+                &:after {
+                    visibility: visible;
+                    background-color: $primary-color;
+                }
+            }
+
+            &:hover {
+                color: $primary-color-hover;
+
+                &:after {
+                    background-color: $primary-color-hover;
+                }
+            }
+
+            &.theme-toggle #icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
