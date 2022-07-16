@@ -18,6 +18,7 @@ function Navbar() {
         } else {
             setTheme('light');
         }
+        document.querySelector('body').classList.toggle('dark-theme');
     };
 
     return (

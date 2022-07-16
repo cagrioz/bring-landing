@@ -2,10 +2,10 @@ import React from 'react';
 import './App.scss';
 import AboutVector from './assets/svg/AboutVector';
 import SecurityVector from './assets/svg/SecurityVector';
-import ServicesVector from './assets/svg/ServicesVector';
 import Card from './components/Card/Card';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import Services from './components/Services/Services';
 import { HeaderProvider } from './context/HeaderContext';
 
 function App() {
@@ -29,6 +29,8 @@ function App() {
                 title="Your Safety Is Important"
                 description="When your order reaches you, we have the health safety protocols, so that you are protected from any disease. Watch the video of how the delivery is made."
             />
+
+            <Services />
         </div>
     );
 }

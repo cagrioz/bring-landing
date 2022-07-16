@@ -1,6 +1,16 @@
 @use 'variables' as *;
 @use 'common' as *;
 
+::-moz-selection {
+    background-color: var(--primary-color);
+    color: var(--title-color);
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: var(--title-color);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +21,8 @@
 body {
     font-family: $font-family-base;
     font-size: $font-md;
-    color: $text-color;
+    color: var(--text-color);
+    background-color: var(--body-color);
 
     @include smooth-animation;
 }
@@ -23,7 +34,7 @@ h3 {
     font-weight: 700;
     margin: 0;
     padding: 0;
-    color: $title-color;
+    color: var(--title-color);
 }
 
 h1 {
@@ -36,6 +47,13 @@ h2 {
 
 h3 {
     font-size: $font-lg;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: $font-md;
+    font-weight: 600;
+    color: var(--title-color);
 }
 
 img {
@@ -45,8 +63,8 @@ img {
 
 button {
     display: inline-block;
-    background-color: $primary-color;
-    color: $title-color;
+    background-color: var(--primary-color);
+    color: #1a1a1a;
     font-weight: 700;
     font-size: $font-sm;
     padding: $padding-lg $padding-2xl;
@@ -63,5 +81,14 @@ button {
 }
 
 button:hover {
-    background-color: $primary-color-hover;
+    background-color: var(--primary-color-hover);
+}
+
+.svg {
+    &__color {
+        fill: var(--primary-color);
+    }
+    &__blob {
+        fill: var(--primary-color-light);
+    }
 }

@@ -14,7 +14,7 @@
             padding: $padding-md $padding-lg;
             font-size: $font-sm;
             font-weight: 600;
-            color: $title-color;
+            color: var(--title-color);
             cursor: pointer;
             position: relative;
 
@@ -35,19 +35,19 @@
             }
 
             &.active {
-                color: $primary-color;
+                color: var(--primary-color);
 
                 &:after {
                     visibility: visible;
-                    background-color: $primary-color;
+                    background-color: var(--primary-color);
                 }
             }
 
             &:hover {
-                color: $primary-color-hover;
+                color: var(--primary-color-hover);
 
                 &:after {
-                    background-color: $primary-color-hover;
+                    background-color: var(--primary-color-hover);
                 }
             }
         }

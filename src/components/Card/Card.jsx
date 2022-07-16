@@ -7,10 +7,10 @@ function Card({ img, title, description, reversed }) {
         <section className="card">
             <div className={`container flex ${reversed && 'reverse'}`}>
                 <div>
-                    <h1>{title}</h1>
+                    <h3>{title}</h3>
                     <p>{description}</p>
                 </div>
-                {img}
+                <div>{img}</div>
             </div>
         </section>
     );

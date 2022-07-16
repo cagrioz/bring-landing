@@ -5,20 +5,11 @@
 
     .flex {
         -webkit-box-flex: 1;
-            -ms-flex: 1 0 50%;
-                flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
     }
 
     p {
         margin: $margin-lg 0;
-    }
-
-    .svg {
-        &__color {
-            fill: $primary-color;
-        }
-        &__blob {
-            fill: $primary-color-light;
-        }
     }
 }
